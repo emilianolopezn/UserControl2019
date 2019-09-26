@@ -38,5 +38,24 @@ namespace ControlesDeUsuario
                     break;
             }
         }
+
+        private void BtnCalcularArea_Click(object sender, RoutedEventArgs e)
+        {
+            double area = 0.0;
+            switch(cbFigura.SelectedIndex)
+            {
+                case 0: //circulo
+                    double radio =
+                        double.Parse(
+                   ((ParametrosCirculo)
+                        (grdParametrosFigura.Children[0])).
+                        txtRadio.Text);
+                    area = Math.PI * radio * radio;
+                    break;
+                default:
+                    break;
+            }
+            lblResultado.Text = area.ToString();
+        }
     }
 }
